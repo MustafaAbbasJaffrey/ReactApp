@@ -28,7 +28,7 @@ async function requestNotificationPermission() {
 // Handle successful token retrieval
 function handleToken(token) {
   if (token) {
-    console.log('Firebase Token:', token);
+    console.log('Firebase Token: updated', token);
     // Send token to your server for further processing (e.g., saving to user profile)
   } else {
     console.log('No registration token available. Request permission to generate one.');
@@ -43,7 +43,6 @@ function onMessageReceived(payload) {
   const title = payload.notification?.title;
   const body = payload.notification?.body;
   const data = payload.data;
-
   // Display a notification to the user (using a notification library or custom logic)
   if (Notification.permission === 'granted') {
     const options =  {
